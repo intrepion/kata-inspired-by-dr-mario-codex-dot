@@ -1,0 +1,82 @@
+- banner:
+  - link "Prism Orchard home":
+    - /url: "#"
+    - generic: ✳
+    - text: PRISM ORCHARD
+  - generic: A GARDEN OF FALLING LIGHT • VOL. 01
+  - button "How to play ?"
+- main:
+  - generic: ✦ THE NIGHT GARDENER
+  - heading "A little light. A new beginning." [level=1]:
+    - text: A little light.
+    - text: A new
+    - emphasis: beginning.
+  - paragraph:
+    - text: Guide falling seeds. Untangle the stars.
+    - text: Bring five forgotten orchards back to life.
+  - generic: ✧
+  - text: ORCHARD 05 / 05
+  - heading "Dawn keeper" [level=2]
+  - paragraph: Restore the last lights before morning.
+  - generic "Campaign progress"
+  - button "✧ Gardener’s note +":
+    - text: ✧ Gardener’s note
+    - generic: +
+  - paragraph: Your garden is saved automatically.
+  - region "Game area":
+    - generic: STORY MODE
+    - button "Ⅱ Pause" [disabled]
+    - img "complete. 0 knots.":
+      - generic: ◆
+      - generic: ≋
+      - generic: ●
+    - generic: ALL FIVE ORCHARDS RESTORED
+    - heading "And then, dawn." [level=2]
+    - paragraph: You brought the garden back to life. 4,820 light gathered. The stars will remember.
+    - button "Grow again ↺"
+    - button "Keep growing · Endless →"
+    - generic: ✦ 0 knots to release
+    - generic: 8 × 14 SKY
+    - generic "On-screen game controls":
+      - button "Move left" [disabled]: ←
+      - button "Rotate counterclockwise" [disabled]: ↶
+      - button "Rotate clockwise" [disabled]: ↷
+      - button "Move right" [disabled]: →
+      - button "Soft drop" [disabled]: ↓
+      - button "Hard drop" [disabled]: Drop ↡
+    - paragraph:
+      - text: ← → MOVE
+      - generic: ↑ ROTATE
+      - text: ↓ SOFT DROP
+      - generic: SPACE DROP
+  - complementary:
+    - generic: COMING NEXT
+    - generic: ◆
+    - generic: ≋
+    - paragraph: Two seeds. One possibility.
+    - generic: LIGHT GATHERED
+    - strong: "4820"
+    - generic: KNOTS REMAINING
+    - strong: "00"
+    - generic: BEST CASCADE
+    - strong: 2×
+    - generic: LOCAL RECORD
+    - strong: 4,820
+    - generic: THE THREE LIGHTS
+    - generic: ●
+    - text: Sun
+    - generic: Circle
+    - generic: ◆
+    - text: Tide
+    - generic: Diamond
+    - generic: ≋
+    - text: Dusk
+    - generic: Stripes
+    - generic: ✧
+    - paragraph: Connect 4 or more matching lights in a line. Release every fixed knot to restore the orchard.
+    - button "Play endless ↗"
+    - button "New campaign ↺"
+- contentinfo:
+  - generic: GROW SOMETHING BRIGHT.
+  - generic: ORIGINAL PUZZLE • NO ACCOUNT NEEDED
+- generic: Dawn has arrived. All five orchards restored.

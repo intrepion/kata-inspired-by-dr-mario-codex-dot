@@ -26,3 +26,15 @@ Original night-garden fiction, five short authored lessons, geometric framed kno
 - [QA evidence](docs/QA.md) distinguishes engine fixtures from ordinary browser gameplay.
 
 Matt Pocock workflows used from official `mattpocock/skills`: Grill with Docs (grilling/domain modeling), Implement (TDD/code review). The user authorized default choices and autonomous decisions, so the interview is recorded in the spec rather than interrupting with design questions. Initial red/green seam logs are under `evidence/`; additional domain coverage was added around worked fixtures after the first vertical slice. Reviews are independent spec and standards passes against the initial documentation commit.
+
+## Local delivery
+
+Directory: `/Users/intrepion/Documents/Codex/2026-10-12/task-4/kata-inspired-by-dr-mario-codex-dot`.
+
+A session-only detached production preview listens on port 5214. It has no boot/login autostart; its log is `/tmp/prism-orchard-5214.log`. Existing ports 5173–5213 were not modified. Exact restart command after the current preview stops:
+
+```sh
+cd /Users/intrepion/Documents/Codex/2026-10-12/task-4/kata-inspired-by-dr-mario-codex-dot && npm run preview
+```
+
+To rebuild first: `npm run build`. To stop only this preview, find its PID with `lsof -nP -iTCP:5214 -sTCP:LISTEN` and send that PID a normal TERM signal. Do not stop other preview processes.

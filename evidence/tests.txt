@@ -3,34 +3,34 @@
 > tsc -p tsconfig.test.json && node --test .test-build/tests/*.test.js
 
 SOLVABILITY TRACE (engine actions, not browser play): [{"level":0,"score":310,"targets":3,"waves":1},{"level":0,"score":620,"targets":0,"waves":1},{"level":1,"score":930,"targets":6,"waves":1},{"level":1,"score":1240,"targets":3,"waves":1},{"level":1,"score":1550,"targets":0,"waves":1},{"level":2,"score":2490,"targets":1,"waves":2},{"level":2,"score":2490,"targets":1,"waves":0},{"level":2,"score":2630,"targets":0,"waves":1},{"level":3,"score":2950,"targets":6,"waves":1},{"level":3,"score":3570,"targets":0,"waves":1},{"level":4,"score":3880,"targets":9,"waves":1},{"level":4,"score":4190,"targets":6,"waves":1},{"level":4,"score":4500,"targets":3,"waves":1},{"level":4,"score":4820,"targets":0,"waves":1}]
-✔ crossing runs clear their shared knot exactly once (0.80975ms)
-✔ every authored orchard has no initial matches and clears through ordinary moves (3.733041ms)
-✔ horizontal pair remains held when only one half is supported (0.6535ms)
-✔ vertical pair falls together and links follow the pair (0.242958ms)
-✔ clearing one half releases its survivor to fall independently (0.144083ms)
-✔ unsupported fixed knots never move and loose halves settle (0.148209ms)
-✔ genuine cascade clears two waves and awards a combo once (0.169625ms)
-✔ simultaneous different-color horizons resolve in a single wave (0.110542ms)
-✔ rotations preserve color order and legal wall adjustments (0.244458ms)
-✔ rotation rejects all occupied kick positions (0.29575ms)
-✔ soft drop locks immediately on contact, hard drop places once (0.279542ms)
-✔ automatic movement waits for interval, long frames are capped (0.264459ms)
-✔ pause freezes movement and clears accumulated fall time (0.599375ms)
-✔ blocked next spawn tops out after locking (0.237334ms)
-✔ last target victory wins over blocked next spawn (0.154666ms)
-✔ landing is legal and stops immediately above obstruction (0.084834ms)
-✔ save roundtrip resumes paused with board, position and score intact (0.457542ms)
-✔ malformed snapshots, invalid links, huge inputs and invalid victory fail closed (0.255042ms)
-✔ endless uses verified layouts across color permutations and continues (1.427958ms)
-✔ invalid final-stage won save cannot bypass the ending (0.190042ms)
-✔ retry preserves entry totals but discards this orchard’s partial score (0.193375ms)
-✔ floor adjustment rotates a horizontal pair upright without leaving the board (0.085458ms)
-✔ clearing top half of a vertical pair releases lower half (0.069167ms)
-✔ isolated longer match removes every member and repeated resolution scores zero (0.070542ms)
-✔ save rejects invalid entry totals, statuses, colors and colliding active pairs (0.182917ms)
-✔ held hard-drop never places a second seed pair until released (0.824666ms)
-✔ horizontal and soft-drop repeat only after initial delay and interval (0.208ms)
-✔ interrupted controls are cleared and cannot repeat after resume (0.084833ms)
+✔ crossing runs clear their shared knot exactly once (1.037291ms)
+✔ every authored orchard has no initial matches and clears through ordinary moves (5.114166ms)
+✔ horizontal pair remains held when only one half is supported (0.673458ms)
+✔ vertical pair falls together and links follow the pair (0.2095ms)
+✔ clearing one half releases its survivor to fall independently (0.137625ms)
+✔ unsupported fixed knots never move and loose halves settle (0.136375ms)
+✔ genuine cascade clears two waves and awards a combo once (0.153083ms)
+✔ simultaneous different-color horizons resolve in a single wave (0.126042ms)
+✔ rotations preserve color order and legal wall adjustments (0.119042ms)
+✔ rotation rejects all occupied kick positions (0.208083ms)
+✔ soft drop locks immediately on contact, hard drop places once (0.159542ms)
+✔ automatic movement waits for interval, long frames are capped (1.074291ms)
+✔ pause freezes movement and clears accumulated fall time (0.118666ms)
+✔ blocked next spawn tops out after locking (0.143083ms)
+✔ last target victory wins over blocked next spawn (0.56375ms)
+✔ landing is legal and stops immediately above obstruction (0.328375ms)
+✔ save roundtrip resumes paused with board, position and score intact (0.527125ms)
+✔ malformed snapshots, invalid links, huge inputs and invalid victory fail closed (0.42575ms)
+✔ endless uses verified layouts across color permutations and continues (1.511166ms)
+✔ invalid final-stage won save cannot bypass the ending (0.202667ms)
+✔ retry preserves entry totals but discards this orchard’s partial score (0.153292ms)
+✔ floor adjustment rotates a horizontal pair upright without leaving the board (0.069833ms)
+✔ clearing top half of a vertical pair releases lower half (0.063834ms)
+✔ isolated longer match removes every member and repeated resolution scores zero (0.065417ms)
+✔ save rejects invalid entry totals, statuses, colors and colliding active pairs (0.159584ms)
+✔ held hard-drop never places a second seed pair until released (2.2535ms)
+✔ horizontal and soft-drop repeat only after initial delay and interval (0.232542ms)
+✔ interrupted controls are cleared and cannot repeat after resume (0.097333ms)
 ℹ tests 28
 ℹ suites 0
 ℹ pass 28
@@ -38,4 +38,4 @@ SOLVABILITY TRACE (engine actions, not browser play): [{"level":0,"score":310,"t
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 79.773375
+ℹ duration_ms 87.475542

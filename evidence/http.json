@@ -1,0 +1,16 @@
+[
+  {
+    "url": "http://127.0.0.1:5214",
+    "status": 200
+  },
+  {
+    "url": "http://127.0.0.1:5214/assets/index-DWmpt6z0.js",
+    "status": 200,
+    "bytes": 21067
+  },
+  {
+    "url": "http://127.0.0.1:5214/assets/index-DdsHxFMb.css",
+    "status": 200,
+    "bytes": 12835
+  }
+]
