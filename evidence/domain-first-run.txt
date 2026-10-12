@@ -1,0 +1,97 @@
+
+> prism-orchard@1.0.0 test
+> tsc -p tsconfig.test.json && node --test .test-build/tests/*.test.js
+
+SOLVABILITY TRACE (engine actions, not browser play): [{"level":0,"score":310,"targets":3,"waves":1},{"level":0,"score":620,"targets":0,"waves":1},{"level":1,"score":930,"targets":6,"waves":1},{"level":1,"score":1240,"targets":3,"waves":1},{"level":1,"score":1550,"targets":0,"waves":1},{"level":2,"score":2490,"targets":1,"waves":2},{"level":2,"score":2490,"targets":1,"waves":0},{"level":2,"score":2630,"targets":0,"waves":1},{"level":3,"score":2950,"targets":6,"waves":1},{"level":3,"score":3570,"targets":0,"waves":1},{"level":4,"score":3880,"targets":9,"waves":1},{"level":4,"score":4190,"targets":6,"waves":1},{"level":4,"score":4500,"targets":3,"waves":1},{"level":4,"score":4820,"targets":0,"waves":1}]
+✔ crossing runs clear their shared knot exactly once (0.974333ms)
+✖ every authored orchard has no initial matches and clears through ordinary moves (3.122959ms)
+✔ horizontal pair remains held when only one half is supported (0.5935ms)
+✔ vertical pair falls together and links follow the pair (0.166542ms)
+✔ clearing one half releases its survivor to fall independently (0.125625ms)
+✔ unsupported fixed knots never move and loose halves settle (0.128042ms)
+✖ genuine cascade clears two waves and awards a combo once (0.221166ms)
+✔ simultaneous different-color horizons resolve in a single wave (0.111166ms)
+✖ rotations preserve color order and legal wall adjustments (0.154209ms)
+✔ rotation rejects all occupied kick positions (0.141333ms)
+✔ soft drop locks immediately on contact, hard drop places once (0.112959ms)
+✔ automatic movement waits for interval, long frames are capped (0.117792ms)
+✔ pause freezes movement and clears accumulated fall time (0.104708ms)
+✔ blocked next spawn tops out after locking (0.075167ms)
+✔ last target victory wins over blocked next spawn (0.0815ms)
+✔ landing is legal and stops immediately above obstruction (0.052541ms)
+✔ save roundtrip resumes paused with board, position and score intact (0.352542ms)
+✔ malformed snapshots, invalid links, huge inputs and invalid victory fail closed (0.227ms)
+✔ endless uses verified layouts across color permutations and continues (1.502708ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 16
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 79.151958
+
+✖ failing tests:
+
+test at .test-build/tests/engine.test.js:21:1
+✖ every authored orchard has no initial matches and clears through ordinary moves (3.122959ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  4820 !== 4630
+  
+      at TestContext.<anonymous> (file:///Users/intrepion/Documents/Codex/2026-10-12/task-4/kata-inspired-by-dr-mario-codex-dot/.test-build/tests/engine.test.js:36:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 4820,
+    expected: 4630,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at .test-build/tests/engine.test.js:43:1
+✖ genuine cascade clears two waves and awards a combo once (0.221166ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  940 !== 930
+  
+      at TestContext.<anonymous> (file:///Users/intrepion/Documents/Codex/2026-10-12/task-4/kata-inspired-by-dr-mario-codex-dot/.test-build/tests/engine.test.js:43:192)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 940,
+    expected: 930,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at .test-build/tests/engine.test.js:45:1
+✖ rotations preserve color order and legal wall adjustments (0.154209ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  7 !== 6
+  
+      at TestContext.<anonymous> (file:///Users/intrepion/Documents/Codex/2026-10-12/task-4/kata-inspired-by-dr-mario-codex-dot/.test-build/tests/engine.test.js:46:169)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 7,
+    expected: 6,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
