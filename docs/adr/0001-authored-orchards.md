@@ -1,0 +1,2 @@
+# Bounded authored orchards instead of random target fields
+The five campaign orchards use original authored layouts and starting seed sequences, verified by ordinary move scripts. Random target generation could create unreachable requirements; fixed scenarios give reproducible solvability and teach pair support, colors, and cascades. Endless cycles these verified layouts with color permutations and a capped speed increase; seed sequences continue with deterministic random pairs after their teaching prefix.

@@ -1,0 +1,2 @@
+# Atomic bounded resolution and immediate locking
+A placed pair resolves simultaneous blooms, reciprocal link breaking and component gravity to stability before checking victory and then spawn blockage. This gives deterministic saves and tests, at the cost of rendering cascade results as a bloom report rather than an interruptible physics animation. There is no lock delay: soft drop locks when blocked and hard drop places immediately. Each resolution pass removes at least four cells; gravity has a board-size bound.

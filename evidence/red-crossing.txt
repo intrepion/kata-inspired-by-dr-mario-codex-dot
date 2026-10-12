@@ -1,0 +1,5 @@
+
+> prism-orchard@1.0.0 test
+> tsc -p tsconfig.test.json && node --test .test-build/tests/*.test.js
+
+tests/engine.test.ts(3,46): error TS2307: Cannot find module '../src/engine.js' or its corresponding type declarations.

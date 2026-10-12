@@ -1,0 +1,2 @@
+# Coding standards
+Keep deterministic domain logic independent of DOM, time and storage. Explicitly bound all resolution, gravity and validation loops. Reject invalid save shape, links, positions and numeric fields. Render user data as text. Test observable outcomes through public domain interfaces; prefer worked expected literals. No production debug or solver state-mutation hooks. Use TypeScript strict checks.
