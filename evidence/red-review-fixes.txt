@@ -1,0 +1,5 @@
+
+> prism-orchard@1.0.0 test
+> tsc -p tsconfig.test.json && node --test .test-build/tests/*.test.js
+
+tests/engine.test.ts(37,9): error TS2305: Module '"../src/engine.js"' has no exported member 'retry'.

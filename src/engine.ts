@@ -4,7 +4,7 @@ export interface Cell {color:Color;knot:boolean;link:number|null}
 export type Board=(Cell|null)[][];
 export interface Piece {x:number;y:number;dir:number;colors:Colors}
 export type Status='playing'|'paused'|'won'|'lost'|'complete';
-export interface Game {version:1;board:Board;active:Piece|null;next:Colors;mode:'campaign'|'endless';level:number;cursor:number;rng:number;score:number;blooms:number;bestChain:number;status:Status;fallMs:number;last:{waves:number;removed:number;score:number;knots:number};}
+export interface Game {version:1;entry:{score:number;blooms:number;bestChain:number};board:Board;active:Piece|null;next:Colors;mode:'campaign'|'endless';level:number;cursor:number;rng:number;score:number;blooms:number;bestChain:number;status:Status;fallMs:number;last:{waves:number;removed:number;score:number;knots:number};}
 export const emptyBoard=():Board=>Array.from({length:HEIGHT},()=>Array<Cell|null>(WIDTH).fill(null));
 const offsets=[[1,0],[0,1],[-1,0],[0,-1]];
 export function positions(p:Piece):[number,number][]{const [dx,dy]=offsets[p.dir];return [[p.x,p.y],[p.x+dx,p.y+dy]];}
@@ -54,7 +54,7 @@ export function newGame(mode:Game['mode']='campaign',level=0,score=0):Game{
  const board=emptyBoard(),orchard=ORCHARDS[level%5],shift=mode==='endless'?Math.floor(level/5)%3:0;
  for(const [x,y,c] of orchard.targets)board[y][x]={color:((c+shift)%3) as Color,knot:true,link:null};
  for(const [x,y,c] of orchard.loose)board[y][x]={color:((c+shift)%3) as Color,knot:false,link:null};
- const g:Game={version:1,board,active:null,next:[0,0],mode,level,cursor:0,rng:12345+level,score,blooms:0,bestChain:0,status:'paused',fallMs:0,last:{waves:0,removed:0,score:0,knots:0}};
+ const g:Game={version:1,entry:{score,blooms:0,bestChain:0},board,active:null,next:[0,0],mode,level,cursor:0,rng:12345+level,score,blooms:0,bestChain:0,status:'paused',fallMs:0,last:{waves:0,removed:0,score:0,knots:0}};
  g.next=nextColors(g);spawn(g);return g;
 }
 export function landing(g:Game):Piece|null{if(!g.active)return null;let p={...g.active};for(let i=0;i<HEIGHT;i++){const q={...p,y:p.y+1};if(!legal(g.board,q))break;p=q;}return p;}
@@ -79,7 +79,8 @@ export function fallInterval(g:Game):number{return Math.max(260,1000-g.level*100
 export function tick(g:Game,dt:number):boolean{if(g.status!=='playing'||!Number.isFinite(dt)||dt<0)return false;g.fallMs+=Math.min(dt,250);if(g.fallMs<fallInterval(g))return false;g.fallMs=0;return drop(g);}
 export function pause(g:Game):void{if(g.status==='playing'){g.status='paused';g.fallMs=0;}}
 export function resume(g:Game):void{if(g.status==='paused'){g.status='playing';g.fallMs=0;}}
-export function advance(g:Game):Game{if(g.status!=='won')return g;const n=newGame(g.mode,g.level+1,g.score);n.blooms=g.blooms;n.bestChain=g.bestChain;return n;}
+export function advance(g:Game):Game{if(g.status!=='won')return g;if(g.mode==='campaign'&&g.level>=4){g.status='complete';return g;}const n=newGame(g.mode,g.level+1,g.score);n.blooms=g.blooms;n.bestChain=g.bestChain;n.entry={score:g.score,blooms:g.blooms,bestChain:g.bestChain};return n;}
+export function retry(g:Game):Game{const n=newGame(g.mode,g.level,g.entry.score);n.blooms=g.entry.blooms;n.bestChain=g.entry.bestChain;n.entry={...g.entry};return n;}
 export function encode(g:Game):string{return JSON.stringify(g);}
 export function decode(raw:string):Game|null{
  if(raw.length>24000)return null;
@@ -87,6 +88,7 @@ export function decode(raw:string):Game|null{
   const g=JSON.parse(raw) as Game;const int=(v:unknown,min:number,max:number)=>Number.isSafeInteger(v)&&Number(v)>=min&&Number(v)<=max;
   const color=(v:unknown)=>int(v,0,2),colors=(v:unknown)=>Array.isArray(v)&&v.length===2&&v.every(color);
   if(!g||g.version!==1||!['campaign','endless'].includes(g.mode)||!int(g.level,0,g.mode==='campaign'?4:100000)||!int(g.cursor,1,1000000)||!int(g.rng,0,4294967295)||!int(g.score,0,1e12)||!int(g.blooms,0,1e9)||!int(g.bestChain,0,28)||!['playing','paused','won','lost','complete'].includes(g.status)||!colors(g.next)||!Number.isFinite(g.fallMs)||g.fallMs<0||g.fallMs>1000)return null;
+  if(!g.entry||!int(g.entry.score,0,g.score)||!int(g.entry.blooms,0,g.blooms)||!int(g.entry.bestChain,0,g.bestChain))return null;
   if(!Array.isArray(g.board)||g.board.length!==HEIGHT||g.board.some(r=>!Array.isArray(r)||r.length!==WIDTH))return null;
   for(let y=0;y<HEIGHT;y++)for(let x=0;x<WIDTH;x++){
    const c=g.board[y][x];if(c===null)continue;
@@ -98,6 +100,7 @@ export function decode(raw:string):Game|null{
   if(['playing','paused'].includes(g.status)&&(!g.active||targetCount(g)===0))return null;
   if(['won','complete','lost'].includes(g.status)&&g.active!==null)return null;
   if(['won','complete'].includes(g.status)&&targetCount(g)!==0)return null;
+  if(g.status==='won'&&g.mode==='campaign'&&g.level===4)return null;
   if(g.status==='complete'&&(g.mode!=='campaign'||g.level!==4))return null;
   if(matches(g.board).size)return null;
   if(g.status==='playing')g.status='paused';g.fallMs=0;return g;

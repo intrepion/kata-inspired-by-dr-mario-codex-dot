@@ -12,7 +12,7 @@ npm run preview
 
 Open http://127.0.0.1:5214. Development: `npm run dev`. Both commands require this port to be free and never select another port silently.
 
-Arrows move and soft-drop; ↑/X rotate clockwise; Z rotates counterclockwise; Space hard-drops. P/Escape pauses. Touch/mouse controls are below the board. Shapes identify every color. The field guide explains pair support and cascades; gardener notes offer stage hints. Saved runs resume paused, including the exact active pair. Local records and saves stay on your device. Retry starts a fresh score at the current orchard. Starting another mode replaces your active saved run.
+Arrows move and soft-drop; ↑/X rotate clockwise; Z rotates counterclockwise; Space hard-drops. P/Escape pauses. Touch/mouse controls are below the board. Shapes identify every color. The field guide explains pair support and cascades; gardener notes offer stage hints. Saved runs resume paused, including the exact active pair. Local records and saves stay on your device. Retry restores the current orchard’s entry score and records. Starting another mode replaces your active saved run.
 
 ## Deliberate differences
 

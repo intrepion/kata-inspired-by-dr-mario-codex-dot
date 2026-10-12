@@ -1,0 +1,37 @@
+
+> prism-orchard@1.0.0 test
+> tsc -p tsconfig.test.json && node --test .test-build/tests/*.test.js
+
+SOLVABILITY TRACE (engine actions, not browser play): [{"level":0,"score":310,"targets":3,"waves":1},{"level":0,"score":620,"targets":0,"waves":1},{"level":1,"score":930,"targets":6,"waves":1},{"level":1,"score":1240,"targets":3,"waves":1},{"level":1,"score":1550,"targets":0,"waves":1},{"level":2,"score":2490,"targets":1,"waves":2},{"level":2,"score":2490,"targets":1,"waves":0},{"level":2,"score":2630,"targets":0,"waves":1},{"level":3,"score":2950,"targets":6,"waves":1},{"level":3,"score":3570,"targets":0,"waves":1},{"level":4,"score":3880,"targets":9,"waves":1},{"level":4,"score":4190,"targets":6,"waves":1},{"level":4,"score":4500,"targets":3,"waves":1},{"level":4,"score":4820,"targets":0,"waves":1}]
+✔ crossing runs clear their shared knot exactly once (0.844417ms)
+✔ every authored orchard has no initial matches and clears through ordinary moves (3.182791ms)
+✔ horizontal pair remains held when only one half is supported (1.352375ms)
+✔ vertical pair falls together and links follow the pair (0.566958ms)
+✔ clearing one half releases its survivor to fall independently (0.494958ms)
+✔ unsupported fixed knots never move and loose halves settle (0.413666ms)
+✔ genuine cascade clears two waves and awards a combo once (0.361917ms)
+✔ simultaneous different-color horizons resolve in a single wave (0.136792ms)
+✔ rotations preserve color order and legal wall adjustments (0.128916ms)
+✔ rotation rejects all occupied kick positions (0.669875ms)
+✔ soft drop locks immediately on contact, hard drop places once (0.135666ms)
+✔ automatic movement waits for interval, long frames are capped (0.099459ms)
+✔ pause freezes movement and clears accumulated fall time (0.128042ms)
+✔ blocked next spawn tops out after locking (0.435166ms)
+✔ last target victory wins over blocked next spawn (0.151708ms)
+✔ landing is legal and stops immediately above obstruction (0.241709ms)
+✔ save roundtrip resumes paused with board, position and score intact (0.9185ms)
+✔ malformed snapshots, invalid links, huge inputs and invalid victory fail closed (0.646125ms)
+✔ endless uses verified layouts across color permutations and continues (3.272542ms)
+✔ invalid final-stage won save cannot bypass the ending (0.327625ms)
+✔ retry preserves entry totals but discards this orchard’s partial score (0.592875ms)
+✔ held hard-drop never places a second seed pair until released (1.414041ms)
+✔ horizontal and soft-drop repeat only after initial delay and interval (0.329667ms)
+✔ interrupted controls are cleared and cannot repeat after resume (0.154375ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 94.460167
