@@ -38,3 +38,7 @@ cd /Users/intrepion/Documents/Codex/2026-10-12/task-4/kata-inspired-by-dr-mario-
 ```
 
 To rebuild first: `npm run build`. To stop only this preview, find its PID with `lsof -nP -iTCP:5214 -sTCP:LISTEN` and send that PID a normal TERM signal. Do not stop other preview processes.
+
+## Play online
+
+[Play the hosted game](https://intrepion.github.io/kata-inspired-by-dr-mario-codex-dot/)
