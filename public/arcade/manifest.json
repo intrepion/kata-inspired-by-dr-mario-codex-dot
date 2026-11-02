@@ -1,6 +1,47 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "gameId": "kata-inspired-by-dr-mario-codex-dot",
   "playUrl": "https://intrepion.github.io/kata-inspired-by-dr-mario-codex-dot/",
-  "screenshots": []
+  "screenshots": [
+    {
+      "path": "arcade/screenshots/ci-20261102-01.jpg",
+      "sha256": "08f692a2bfc6a9bfb0c54bf881480f902ad716ee215a405eeefbbb7191cae7f3",
+      "alt": "Prism Orchard gameplay, view 1",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261102-01.png",
+        "sourceSha256": "05ccedefbdea5eb00da7b661b8a1578115c113cdc5350ffabf04085b27360baa",
+        "captureCommit": "dc263d75e453455a21238899f38d5f4f23a81e88",
+        "workflowRunId": "41406959044",
+        "inputHashes": {
+          "index.html": "7c56a8661c2306bff2caaefed01119e416c74fd4e23ec9533f4764c2bc2544e6",
+          "assets/index-DWmpt6z0.js": "7c4b59bb52c94b761474f19e4a261efff6507289d052e073d5f1a623204ca1c2",
+          "assets/index-DdsHxFMb.css": "4c846a25260dd1bf95226fa3b35717727685503d76f2b8e992526c13df302972"
+        },
+        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
+        "captureRecordSha256": "9920a397bff40fb9fe4acac2a84be16000211486c7731402117be236612bc277"
+      }
+    },
+    {
+      "path": "arcade/screenshots/ci-20261102-02.jpg",
+      "sha256": "351179370840b4c4f9b8435da9aa7323819ddef0f9048b171902ffc646fc6d2b",
+      "alt": "Prism Orchard gameplay, view 2",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261102-02.png",
+        "sourceSha256": "244dba8868b876cbd9df439d7f97ff0028b1ed55a34f907dd522e7d94f7b1ad9",
+        "captureCommit": "dc263d75e453455a21238899f38d5f4f23a81e88",
+        "workflowRunId": "41406959044",
+        "inputHashes": {
+          "index.html": "7c56a8661c2306bff2caaefed01119e416c74fd4e23ec9533f4764c2bc2544e6",
+          "assets/index-DWmpt6z0.js": "7c4b59bb52c94b761474f19e4a261efff6507289d052e073d5f1a623204ca1c2",
+          "assets/index-DdsHxFMb.css": "4c846a25260dd1bf95226fa3b35717727685503d76f2b8e992526c13df302972"
+        },
+        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
+        "captureRecordSha256": "9920a397bff40fb9fe4acac2a84be16000211486c7731402117be236612bc277"
+      }
+    }
+  ]
 }
