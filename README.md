@@ -42,3 +42,7 @@ To rebuild first: `npm run build`. To stop only this preview, find its PID with 
 ## Play online
 
 [Play the hosted game](https://intrepion.github.io/kata-inspired-by-dr-mario-codex-dot/)
+
+## Arcade metadata
+
+See [docs/arcade-metadata.md](docs/arcade-metadata.md) for the game-owned manifest and screenshot provenance.
